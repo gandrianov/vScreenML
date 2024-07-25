@@ -5,7 +5,7 @@ Python-based package of [original implementation](https://github.com/karanicolas
 
 **Installation**
 
-The package available only on GitHub and it should download all dependencies automatically:
+To install the package and its dependencies, use the following pip command:
 
 ```
 pip install git+https://github.com/gandrianov/vScreenML.git
