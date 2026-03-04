@@ -38,7 +38,7 @@ def minimize_pdb_complex():
     
     # initialize pyrosetta
     params_filenames = " -extra_res_fa ".join(ligand_params)
-    pyrosetta_utils.init_pyrosetta(f"-beta -ignore_zero_occupancy false -extra_res_fa {params_filenames}")
+    pyrosetta_utils.init_pyrosetta(f"-score:weights beta_genpot -corrections::gen_potential -ignore_zero_occupancy false -extra_res_fa {params_filenames}")
 
     # compile pdb into one pdb strings
     ligand_pdb_strings = [open(p, "r").read() for p in ligand_pdbs]
@@ -89,7 +89,7 @@ def calculate_features():
     params_strings = [open(p, "r").read() for p in ligand_params]
 
     # initialize pyrosetta
-    pyrosetta_utils.init_pyrosetta(f"-ignore_zero_occupancy false -beta -extra_res_fa {params_filenames}") 
+    pyrosetta_utils.init_pyrosetta(f"-score:weights beta_genpot -corrections::gen_potential -ignore_zero_occupancy false -extra_res_fa {params_filenames}") 
 
     # read input structure in rosetta
     pdbstring = open(pdb_complex).read()
