@@ -12,8 +12,7 @@ def AssignChargesByName(mol, name):
     elif name == "am1bccnosymspt":
         optimize = True
         symmetrize = True
-        return oequacpac.OEAssignCharges(mol,
-                                         oequacpac.OEAM1BCCCharges(not optimize, not symmetrize))
+        return oequacpac.OEAssignCharges(mol, oequacpac.OEAM1BCCCharges(not optimize, not symmetrize))
     elif name == "amber" or name == "amberff94":
         return oequacpac.OEAssignCharges(mol, oequacpac.OEAmberFF94Charges())
     elif name == "am1bccelf10":
